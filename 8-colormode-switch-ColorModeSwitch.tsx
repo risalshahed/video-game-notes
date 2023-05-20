@@ -5,6 +5,7 @@ const ColorModeSwitch = () => {
 
     return (
         <>
+            {/* The Switch component is used as an alternative for the checkbox component. */}
             <HStack>
                 <Switch colorScheme='green' isChecked={colorMode === 'dark'} onChange={toggleColorMode} />
                 <Text>Dark Mode</Text>
