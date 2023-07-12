@@ -40,13 +40,13 @@ const useGames = () => {
         apiClient.get<FetchGamesResponse>('/games', { signal: controller.signal })
         .then(res => {
             setGames(res.data.results);
-            // 15.3 emnite finally te false krleo, TS ba strict mode a possible na tai ekhanei
+            // 15.3 emnite "finally" te false krleo, TS ba strict mode a possible na tai ekhanei
             setLoading(false);
         })
         .catch(err => {
             if(err instanceof CanceledError) return;
             setError(err.message);
-            // 15.4 emnite finally te false krleo, TS ba strict mode a possible na tai ekhanei
+            // 15.4 emnite "finally" te false krleo, TS ba strict mode a possible na tai ekhanei
             setLoading(false);
         });
 
